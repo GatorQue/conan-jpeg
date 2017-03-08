@@ -7,7 +7,7 @@ env:
   global:
     - CONAN_UPLOAD=1
     - CONAN_REFERENCE="jpeg/9.2"
-    - CONAN_USERNAME="gatorque"
+    - CONAN_USERNAME="GatorQue"
     - CONAN_CHANNEL="testing"
     - CONAN_TOTAL_PAGES=1
     - CONAN_CURRENT_PAGE=1

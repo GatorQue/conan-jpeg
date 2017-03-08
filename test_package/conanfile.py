@@ -3,7 +3,7 @@ from conans import CMake
 import os
 
 ############### CONFIGURE THESE VALUES ##################
-default_user = "gatorque"
+default_user = "GatorQue"
 default_channel = "testing"
 #########################################################
 
