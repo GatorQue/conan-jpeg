@@ -10,7 +10,7 @@ class JpegConan(ConanFile):
     generators = "cmake"
     settings = "os", "arch", "compiler", "build_type"
     options = {"shared": [True, False]}
-    default_options = "shared=False"
+    default_options = "shared=True"
     exports = ["CMakeLists.txt"]
     url="http://github.com/GatorQue/conan-jpeg"
     license="http://www.infai.org/jpeg"
@@ -66,7 +66,7 @@ class JpegConan(ConanFile):
 
     def package(self):
         self.copy("*", dst="include", src="install/include")
-        self.copy("*", dst="lib", src="install/lib")
+        self.copy("*", dst="lib", src="install/lib", links=True)
         self.copy("*", dst="bin", src="install/bin")
 
     def package_info(self):
