@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <jpeglib.h>
-#include <jversion.h>
 
 int main(int argc, char **argv)
 {
     struct jpeg_decompress_struct cinfo;
     struct jpeg_error_mgr jerr;
 
-    printf("JPEG Version: %s\n", JVERSION);
+    printf("JPEG Version: %d.%d\n", JPEG_LIB_VERSION_MAJOR, JPEG_LIB_VERSION_MINOR);
     cinfo.err = jpeg_std_error(&jerr);
     jpeg_create_decompress(&cinfo);
 
