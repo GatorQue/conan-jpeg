@@ -30,9 +30,8 @@ class JpegConan(ConanFile):
 
             cmake_options = []
             cmake_options.append("-DCMAKE_INSTALL_PREFIX:PATH=../install")
-            # JPEG sources can't create shared libraries for Windows when
-            # using Visual Studio compilers
-            if self.options.shared == True and self.settings.compiler == "gcc":
+            if self.options.shared == True:
+                cmake_options.append("-DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=ON")
                 cmake_options.append("-DBUILD_SHARED_LIBS=ON")
 
             self.run("IF not exist build mkdir build")
